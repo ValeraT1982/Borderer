@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Borderer:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Borderer_jar</output-path>
+    <root id="archive" name="Borderer.jar">
+      <element id="module-output" name="Borderer" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-io-2.6/commons-io-2.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-imaging-1.0-R1534292/commons-imaging-1.0-R1534292.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
