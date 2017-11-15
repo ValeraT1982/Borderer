@@ -32,7 +32,7 @@ public class Main {
                     }
 
                     ImageIO.write(outputImg, extension, outputFile);
-                    //CopyMetadataHelper.changeExifMetadata(fileEntry, outputFile);
+                    CopyMetadataHelper.copyExifMetadata(fileEntry, outputFile);
                 }
             }
         }
