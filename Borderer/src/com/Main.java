@@ -1,6 +1,7 @@
 package com;
 
 import com.Core.CopyMetadataHelper;
+import com.Core.Dpi;
 import com.Core.ImageBorderer;
 import org.apache.commons.imaging.ImageReadException;
 import org.apache.commons.imaging.ImageWriteException;
@@ -15,7 +16,7 @@ import java.nio.file.Paths;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, ImageWriteException, ImageReadException {
+    public static void main(String[] args) throws IOException, ImageWriteException, ImageReadException, org.apache.sanselan.ImageReadException {
         String current = new java.io.File( "." ).getCanonicalPath();
         int border = 10;
         final File folder = new File(current);
@@ -26,12 +27,13 @@ public class Main {
                     String outputPath = FilenameUtils.concat(current,"bordered\\" + fileEntry.getName());
                     BufferedImage img = ImageIO.read(fileEntry);
                     BufferedImage outputImg = ImageBorderer.border(img, border);
+                    Dpi dpi = ImageBorderer.getDPI(fileEntry);
                     File outputFile = new File(outputPath);
                     if (!Files.exists(Paths.get(outputFile.getParent()))){
                         Files.createDirectory(Paths.get(outputFile.getParent()));
                     }
 
-                    ImageIO.write(outputImg, extension, outputFile);
+                    ImageBorderer.save(outputImg, outputFile, dpi);
                     CopyMetadataHelper.copyExifMetadata(fileEntry, outputFile);
                 }
             }

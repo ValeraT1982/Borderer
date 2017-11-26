@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="commons-io-2.6" level="project" />
     <orderEntry type="library" name="commons-imaging-1.0-R1534292" level="project" />
+    <orderEntry type="library" name="sanselan-0.97-incubator" level="project" />
   </component>
 </module>
